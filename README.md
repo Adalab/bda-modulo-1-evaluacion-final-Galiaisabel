@@ -1,3 +1,38 @@
+ 
+# Evaluación módulo 1 Data Analytics
+
+ ## Estructura
+    En principio tenemos 3 variables que almacenan diferentes tipos de datos.
+        `**inventario_producto**`  --> Un atributo para almacenar los productos en el inventario. Cada
+                                       producto es representado como un diccionario con las siguientes claves: 
+                                       `'nombre'`
+                                       `'precio'`
+                                       `'cantidad'`
+            Iniciaremos inventario_producto como una lista vacía. 
+            Esto es un ejemplo de como debería de ser:
+
+                  [ {'nombre': 'Camisa', 'precio': 20, 'cantidad': 40},
+                    {'nombre': 'Pantalón', 'precio': 30, 'cantidad': 30},
+                    {'nombre': 'Zapatos', 'precio': 50, 'cantidad': 25},
+                    {'nombre': 'Chaqueta', 'precio': 70, 'cantidad': 15},
+                    {'nombre': 'Falda', 'precio': 25, 'cantidad': 20},
+                    {'nombre': 'Gorra', 'precio': 10, 'cantidad': 50},
+                    {'nombre': 'Bufanda', 'precio': 15, 'cantidad': 35},
+                    {'nombre': 'Calcetines', 'precio': 5, 'cantidad': 100},
+                    {'nombre': 'Cinturón', 'precio': 12, 'cantidad': 40},
+                    {'nombre': 'Bolso', 'precio': 45, 'cantidad': 18}]
+                    
+                           
+        `clientes` --> Un diccionario, con una clave que será nombre; email y compras serán los valores.       
+        `venta_totales` --> Variable de tipo float.
+
+ ## Funciones
+    
+
+
+
+ 
+ 
   if cantidad > 0 or cantidad < 0:
                 producto["cantidad"] = cantidad + producto["cantidad"]
             else:
