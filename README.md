@@ -121,6 +121,6 @@ Como en las funciones anteriores, y ya hemos mencionado anteriormente para recor
 
 
    ### ver_clientes()
-    Iteremos ahora con el método .items(), para el cual deberemos generar dos iterables (clave, valor)
-    Es decir, por cada item del diccionario clientes imprime su clave(nombre) y su valor(email)
+   Iteremos ahora con el método .items(), para el cual deberemos generar dos iterables (clave, valor)
+   Es decir, por cada item del diccionario clientes imprime su clave(nombre) y su valor(email)
    
