@@ -1,17 +1,12 @@
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="YOUR-DARKMODE-IMAGE">
- <source media="(prefers-color-scheme: light)" srcset="YOUR-LIGHTMODE-IMAGE">
- <img alt="YOUR-ALT-TEXT" src="YOUR-DEFAULT-IMAGE">
-</picture> 
-# Evaluación módulo 1 Data Analytics
+                                 # Evaluación módulo 1 Data Analytics
 
  ## Estructura
     En principio tenemos 3 variables que almacenan diferentes tipos de datos.
         * **inventario_producto** *  --> Un atributo para almacenar los productos en el inventario. Cada
                                        producto es representado como un diccionario con las siguientes claves: 
-                                       +'nombre'
-                                       +'precio'
-                                       +'cantidad'
+                                       + 'nombre' 
+                                       + 'precio'
+                                       + 'cantidad'
             Iniciaremos inventario_producto como una lista vacía. 
             Esto es un ejemplo de como debería de ser:
 
@@ -47,7 +42,7 @@
  ## Funciones
     
     7 funciones principales:
-     *  agregar_producto(nombre, precio, cantidad)
+     * agregar_producto(nombre, precio, cantidad)
      * ver_inventario()
      * buscar_producto(nombre)
      * actualizar_stock(nombre, cantidad)
@@ -57,73 +52,54 @@
 
  
  
-  if cantidad > 0 or cantidad < 0:
-                producto["cantidad"] = cantidad + producto["cantidad"]
-            else:
-                producto["cantidad"] = cantidad
+  ### agregar_producto(nombre,precio,cantidad)
+  Agrega un producto al inventario o actualiza la cantidad si ya existe.
+  Para recorrer el inventario usamos el bucle *for*, usamos la condicional *if* para comparar el nombre del producto existente con el nuevo. Usamos 2 métodos para `nombre`:
+        1. lower() -->para pasar todo el string a minúscula 
+        2. strip() -->para quitar los espacios.
+    Si existe el producto, sumamos la cantidad que ya teniamos con la cantidad pasada en parámetro.
+    Si no agregamos un nuevo producto(primero creamos el producto y luego lo añadimos con appened() al inventario)
+            producto_nuevo = {
+                "nombre": nombre.lower().strip(),
+                "precio" : precio,
+                "cantidad" : cantidad
+                }   
+            *inventario_producto.appened(producto_nuevo)*
+  Mostramos un mensaje en ambas situaciones.
 
-                #actualizar stock
-                def actualizar_stock(nombre,cantidad):
-    for producto in inventario_producto:
-        if producto["nombre"] == nombre: 
-         #if cantidad ==0:
-          #   producto["cantidad"]=0    
-         #else: 
-             producto["cantidad"] += cantidad 
-        #return producto         
-    return "Producto no está en el inventario"   
+  ### ver_inventario()
+  Muestra el inventario productos con sus detalles, para esto usamos *for* para recorrer mi lista de productos con un print dentro de mi bucle para imprimar cada producto.
+  No pasamos ningún dato por parámetro porque no lo necesitamos, lo que queremos es mostrar el inventario en general.
+  *como extra* hemos comprobado si el inventario está vacío para que devuelva un mensaje si lo está.
+
+  ### buscar_producto(nombre)
+Esta función permite buscar un producto dentro de un inventario y devuelve sus detalles (nombre, precio y cantidad) si el producto existe. En caso contrario, indica que el producto no se encuentra en el inventario.
+
+  ### actualizar_stock(nombre, cantidad)
+Esta función permite actualizar la cantidad de stock de un producto en el inventario. Recibe el nombre del producto y la cantidad a agregar (o quitar si es negativa). Si el producto no existe, devuelve un mensaje informando.
+
+Como en las funciones anteriores, y ya hemos mencionado anteriormente para recorrer una lista usamos *for*, con un *if* comprobamos si el producto está o no en el inventario(por el nombre), cremaos una variable(*cant*) para guardar el resultado de la operación suma o resta, *cant* lo usaremos para comprobar:
+    - Si es menos a 0 --> cantidad no puede ser negativo.
+    - Si no *cant* sería nuestra nueva cantidad del producto.
+
+  ### eliminar_producto(nombre)
+  La función elimina_producto(nombre) elimina un producto del inventario según el nombre proporcionado. Si el producto existe, se elimina del inventario; de lo contrario, se notifica al usuario.
+  Recorre el inventario.
+  Comparamos el nombre del producto(pasado por parámetro) con el nombre de los productos que hay en la lista.Si hay coincidencia:
+   Elimina el producto del inventario.
+  Si no eencuentra el producto en la lista, muestra un mensaje. 
 
 
-    def actualizar_stock(nombre,cantidad):
-    for producto in inventario_producto:
-        if producto["nombre"].strip().capitalize() == nombre.strip().capitalize():  
-            producto["cantidad"] += cantidad 
-            return f"'Producto actualizado con éxito' {producto}"         
-    return f"{nombre} no está en el inventario"
+  ### calcular_valor_inventario():
+   La función recorre todos los productos del inventario y suma el total multiplicando el precio por la cantidad de cada producto.
 
 
-    ef realizar_compra():
- carro_compra=[]
- venta_totales = 0
- ver_inventario() 
- producto_encontrado =True
+   ### realizar_compra()
 
- while True :
-   
-    producto_compra=input("Escribe el nombre del producto que deseas comprar , SALIR si deseas abandonar la compra o TERMINAR cuando finalices de elegir los productos")
-    if producto_compra == "SALIR":
-         print("Hemos salido de la compra")
-         break
-    
-    producto_encontrado=False
-    for producto in inventario_producto:          
-           if  producto["nombre"].strip().capitalize() == producto_compra.strip().capitalize():
-            producto_encontrado=True
-            cantidad_comprar=int(input("Cuántas unidades quieres"))
 
-            if cantidad_comprar<=0:
-             print("La cantidad tiene que ser mayor a 0")
-             continue
-              
-            if cantidad_comprar <= producto["cantidad"]:
-                producto_a_comprar ={
-                  "nombre": producto_compra,
-                  "precio":producto["precio"],
-                  "cantidad": cantidad_comprar,
-                  "total_producto":producto["precio"]*cantidad_comprar
-               }
-                carro_compra.append(producto_a_comprar)
-               #actualizo stock
-                producto["cantidad"] =producto["cantidad"]-cantidad_comprar
-               #sumar el total de cada producto
-                venta_totales = venta_totales +producto_a_comprar["total_producto"]
-                print(venta_totales)
-            else:
-                print("Nos falta stock")  
+   ### procesar_pago()
 
-    if  producto_encontrado==False  and producto_compra!="SALIR" and producto_compra !="TERMINAR":        
-             print("Producto no enconrado vuelve a intentarlo")
-    if producto_compra =="TERMINAR":                 
-      print(f"Compra terminada, el coste total de su compra es de: {venta_totales}")  
-      break
- 
+   ### agregar_cliente(nombre, email)
+
+
+   ### ver_clientes()
