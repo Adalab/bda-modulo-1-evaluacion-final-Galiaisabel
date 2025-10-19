@@ -3,11 +3,11 @@
 
  ## Estructura
     En principio tenemos 3 variables que almacenan diferentes tipos de datos.
-        `**inventario_producto**`  --> Un atributo para almacenar los productos en el inventario. Cada
+        * **inventario_producto** *  --> Un atributo para almacenar los productos en el inventario. Cada
                                        producto es representado como un diccionario con las siguientes claves: 
-                                       `'nombre'`
-                                       `'precio'`
-                                       `'cantidad'`
+                                       +'nombre'
+                                       +'precio'
+                                       +'cantidad'
             Iniciaremos inventario_producto como una lista vacía. 
             Esto es un ejemplo de como debería de ser:
 
@@ -21,15 +21,35 @@
                     {'nombre': 'Calcetines', 'precio': 5, 'cantidad': 100},
                     {'nombre': 'Cinturón', 'precio': 12, 'cantidad': 40},
                     {'nombre': 'Bolso', 'precio': 45, 'cantidad': 18}]
-                    
+
                            
-        `clientes` --> Un diccionario, con una clave que será nombre; email y compras serán los valores.       
-        `venta_totales` --> Variable de tipo float.
+        * **clientes** --> Un diccionario, con una clave que será nombre; email y compras serán los valores.
+
+                Tendríamos que tener nuestro diccionario así:
+                 { 'Ana García': {'email': 'ana.garcia@email.com', 'compras': []},
+                    'Luis Fernández': {'email': 'luis.fernandez@email.com', 'compras':
+                    []},
+                    'María López': {'email': 'maria.lopez@email.com', 'compras': []},
+                    'Carlos Ruiz': {'email': 'carlos.ruiz@email.com', 'compras': []},
+                    'Elena Martín': {'email': 'elena.martin@email.com', 'compras': []},
+                    'Javier Torres': {'email': 'javier.torres@email.com', 'compras': []},
+                    'Lucía Sánchez': {'email': 'lucia.sanchez@email.com', 'compras': []},
+                    'Sergio Díaz': {'email': 'sergio.diaz@email.com', 'compras': []},
+                    'Patricia Ramos': {'email': 'patricia.ramos@email.com', 'compras': []}}     
+
+        * **venta_totales** --> Variable de tipo float.
+                                Iniciamos valor con 0.0
 
  ## Funciones
     
-
-
+    7 funciones principales:
+     *  agregar_producto(nombre, precio, cantidad)
+     * ver_inventario()
+     * buscar_producto(nombre)
+     * actualizar_stock(nombre, cantidad)
+     * eliminar_producto(nombre)
+     * calcular_valor_inventario()
+     * realizar_compra()
 
  
  
