@@ -1,12 +1,12 @@
-                                 # Evaluación módulo 1 Data Analytics
+# Evaluación módulo 1 Data Analytics
 
  ## Estructura
     En principio tenemos 3 variables que almacenan diferentes tipos de datos.
  * **inventario_producto**  --> Un atributo para almacenar los productos en el inventario. Cada
                                        producto es representado como un diccionario con las siguientes claves: 
-                                       + 'nombre' 
-                                       + 'precio'
-                                       + 'cantidad'
+       + 'nombre' 
+       + 'precio'
+       + 'cantidad'
             Iniciaremos inventario_producto como una lista vacía. 
             Esto es un ejemplo de como debería de ser:
 
@@ -111,8 +111,8 @@ Como en las funciones anteriores, y ya hemos mencionado anteriormente para recor
    - La cantidad introducida es mayor  a la cantidad del producto solicitado.(*else*)
 
    ### procesar_pago()
-    Creo una variable local, interactuamos con el cliente para solicitar el total a pagar y la cantidad con la que hace el pago, 
-    Si la cantidad a pagar tiene que ser menor a la cantidad con la que realiza el pago, si lo es hacemos la diferencia y lo guardamos en la cariable cambio, si el cambio es mayor que 0 el pago se habrá relizado, en caso contrario mostrará un mensaje que el monto es insuficiente. Usamos el try:...except por si el usuario no introduce números en las cantidades. 
+   Creo una variable local, interactuamos con el cliente para solicitar el total a pagar y la cantidad con la que hace el pago, 
+   Si la cantidad a pagar tiene que ser menor a la cantidad con la que realiza el pago, si lo es hacemos la diferencia y lo guardamos en la cariable cambio, si el cambio es mayor que 0 el pago se habrá relizado, en caso contrario mostrará un mensaje que el monto es insuficiente. Usamos el try:...except por si el usuario no introduce números en las cantidades. 
 
 
    ### agregar_cliente(nombre, email)
